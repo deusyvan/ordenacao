@@ -22,7 +22,10 @@ try {
   </tr>
   
   <?php 
-    $sql = "SELECT * FROM usuarios";
+  if (isset($_GET['ordem']) && empty($_GET['ordem']) == FALSE){
+      
+  }
+    $sql = "SELECT * FROM usuarios ORDER BY idade";
     $sql = $pdo->query($sql);
     if ($sql->rowCount() > 0){
         foreach ($sql->fetchAll() as $usuario):    
