@@ -17,11 +17,17 @@ try {
   
   <?php 
     $sql = "SELECT * FROM usuarios";
-    
-  ?>
-  <tr>
-    <td>Row 1: Col 1</td>
-    <td>Row 1: Col 2</td>
-  </tr>
+    $sql = $pdo->query($sql);
+    if ($sql->rowCount() > 0){
+        foreach ($sql->fetchAll() as $usuario):    
+        ?>
+          <tr>
+            <td><?php echo $usuario['nome']; ?></td>
+            <td><?php echo $usuario['idade']; ?></td>
+          </tr>
+          
+         <?php 
+         endforeach;     
+    }
+    ?>
 </table>
-
