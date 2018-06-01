@@ -8,7 +8,13 @@ try {
 }
 
 ?>
-
+<form method="GET">
+	<select name="ordem">
+		<option></option>
+		<option value="nome">Pelo nome</option>
+		<option value="idade">Pela idade</option>
+	</select>
+</form>
 <table border="1" width=400>
   <tr>
     <th>Nome</th>
