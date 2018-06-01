@@ -7,6 +7,13 @@ try {
     exit;
 }
 
+if (isset($_GET['ordem']) && empty($_GET['ordem']) == FALSE){
+      $ordem = addslashes($_GET['ordem']);
+      $sql = "SELECT * FROM usuarios ORDER BY ".$ordem;
+  } else {
+      $ordem = '';
+      $sql = "SELECT * FROM usuarios";
+  }
 ?>
 <form method="GET">
 	<select name="ordem" onchange="this.form.submit()">
@@ -22,12 +29,6 @@ try {
   </tr>
   
   <?php 
-  if (isset($_GET['ordem']) && empty($_GET['ordem']) == FALSE){
-      $ordem = addslashes($_GET['ordem']);
-      $sql = "SELECT * FROM usuarios ORDER BY ".$ordem;
-  } else {
-       $sql = "SELECT * FROM usuarios";
-  }
     $sql = $pdo->query($sql);
     if ($sql->rowCount() > 0){
         foreach ($sql->fetchAll() as $usuario):    
