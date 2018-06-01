@@ -18,8 +18,8 @@ if (isset($_GET['ordem']) && empty($_GET['ordem']) == FALSE){
 <form method="GET">
 	<select name="ordem" onchange="this.form.submit()">
 		<option></option>
-		<option value="nome" selected="selected">Pelo nome</option>
-		<option value="idade">Pela idade</option>
+		<option value="nome" <?php echo ($ordem == "nome")?'selected="selected"':''; ?> >Pelo nome</option>
+		<option value="idade" <?php echo ($ordem == "idade")?'selected="selected"':''; ?> >Pela idade</option>
 	</select>
 </form>
 <table border="1" width=400>
