@@ -18,7 +18,7 @@ if (isset($_GET['ordem']) && empty($_GET['ordem']) == FALSE){
 <form method="GET">
 	<select name="ordem" onchange="this.form.submit()">
 		<option></option>
-		<option value="nome">Pelo nome</option>
+		<option value="nome" selected="selected">Pelo nome</option>
 		<option value="idade">Pela idade</option>
 	</select>
 </form>
